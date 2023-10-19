@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>Home</title>
+</head>
+<body class="bg-success">
+    <nav class="navbar">
+        <a class="navbar-brand text-light">Predictor</a>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="offset-4 col-md-4">
+                <div class="card mt-100">
+                    <div class="card-body">
+                        <h3 class="text-md-center">Enter the details</h3><br>
+                        {% if label %}
+                             {% if label %}
+                                   <h3 style="color:green">Will Purchase</h3>
+                             {% else %}
+                                   <h3 style="color:green">Will not Purchase</h3>
+                              {% endif %}
+                        {% endif %}
+                        <form class="form" action="/predict" method="POST">
+                            <label>Enter Age</label><br>
+                            <input type="number" name="age" class="form-control"><br>
+                            <label>Enter Salary</label><br>
+                            <input type="number" name="salary" class="form-control"><br><br>
+                            <input type="submit" name="Predict" class="btn btn-block btn-success btn-lg"><br><br>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
